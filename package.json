@@ -1,0 +1,25 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "Language Interpretation and Recognition Interface",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DAKINS1/LIRI-NODE-APP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DAKINS1/LIRI-NODE-APP/issues"
+  },
+  "homepage": "https://github.com/DAKINS1/LIRI-NODE-APP#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.81.0",
+    "twitter": "^1.7.1"
+  }
+}
