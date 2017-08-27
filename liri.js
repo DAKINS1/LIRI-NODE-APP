@@ -1,8 +1,3 @@
-
-//todo- fix the song sign doesnt play if no paramters
-//todo- fix the movie doesnt come up when no search
-//todo- fix if movie has a string of words, only searching first word
-
     // var keys = require("./keys.js");
     var twitterKeys = {
         consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -85,8 +80,8 @@ function accessSpotify(songName) {
     var songName = process.argv[3];
     var params = songName;
 
-    if (!songName) {
-        songName = "The+Sign";
+    if(!params) {
+        params = "Ace of Base The Sign";
     }
 
     spotify.search ({type: 'track', query: params}, function(error, data) {
@@ -115,11 +110,11 @@ function accessMovie(movie) {
         + '-------------' + '\n\n', (err) => {
         if (err) throw err;
     });
-        var search;
         var movie = process.argv[3];
+        var search = movie;
 
-        if (movie === "undefined") {
-            movie = "Mr. nobody";
+        if (!search) {
+            search = "Mr. Nobody";
         }
 
         // search = search.split(' ') + search.join('+');
@@ -160,9 +155,13 @@ function doWhatItSays() {
             // Split out the command name and the parameter name
             var cmdString = data.split(',');
             var command = cmdString[0].trim();
-            var param = cmdString[1].trim();
+            var songName = cmdString[1].trim();
             }
-            accessSpotify(param);
+
+        // console.log(cmdString);//array
+        // console.log(command);//index 0 of array "spotify this song"
+        // console.log(songName);
+        accessSpotify(songName);
         });
 }
 
